@@ -1,6 +1,6 @@
 # coding: utf-8
 Pod::Spec.new do |s|
-  s.name         = "BMBaseLibrary"
+  s.name         = "MDSBaseLibrary"
   s.version      = "2.0.1"
   s.summary      = "MDS iOS App base library"
   s.description  = <<-DESC
