@@ -8,7 +8,7 @@
 
 #import "HYAlertView.h"
 #import "JYTLevel2Button.h"
-#import "BMConfigManager.h"
+#import "MDSConfigManager.h"
 #import "JYTBoldTitleLabel.h"
 #import "JYTTitleLabel.h"
 #import "HYAlertViewManager.h"
@@ -25,7 +25,7 @@
 // 文字标题、内容两边的留白宽度
 #define kPadding 20.0
 
-#import "BMDefine.h"
+#import "MDSDefine.h"
 
 @interface HYAlertView () <UITableViewDataSource, UITableViewDelegate>
 {

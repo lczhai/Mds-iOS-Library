@@ -7,7 +7,7 @@
 
 #import "CTMediator+BMShareActions.h"
 
-NSString *const kCTMediatorWXShareTarget = @"BMWXShare";
+NSString *const kCTMediatorWXShareTarget = @"MDSWXShare";
 
 NSString *const kCTMediatorActionHandleOpenURL = @"ShareHandleOpenURL";
 

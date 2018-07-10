@@ -11,9 +11,9 @@
 
 @interface WXSDKEngine (BMExtend)
 
-+(void)bm_registerDefaultHandlers;
++(void)mds_registerDefaultHandlers;
 
-+(void)bm_registerDefaultModules;
++(void)mds_registerDefaultModules;
 
 + (void)registerModule:(NSString *)name withClass:(Class)clazz;
 

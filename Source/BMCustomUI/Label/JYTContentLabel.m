@@ -7,7 +7,7 @@
 //
 
 #import "JYTContentLabel.h"
-#import "BMDefine.h"
+#import "MDSDefine.h"
 
 @implementation JYTContentLabel
 

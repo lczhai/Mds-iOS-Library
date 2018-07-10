@@ -2,7 +2,7 @@
 //  WXEditComponent+BMExtend.h
 //  Pods
 //
-//  Created by XHY on 2017/4/24.
+//  Created by jony on 2018/4/24.
 //
 //
 
@@ -11,20 +11,20 @@
 
 @interface WXEditComponent (BMExtend)
 
-- (instancetype)bmEdit_initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance;
+- (instancetype)mdsEdit_initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance;
 
-- (void)bmEdit_viewDidLoad;
+- (void)mdsEdit_viewDidLoad;
 
 - (void)setAutofocus:(BOOL)b;
-- (void)bmEdit_setAutofocus:(BOOL)b;
+- (void)mdsEdit_setAutofocus:(BOOL)b;
 
-- (BOOL)bmEdit_textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text;
+- (BOOL)mdsEdit_textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text;
 
 - (void)setType;
--(void)bmSetType;
+-(void)mdsSetType;
 
 - (void)setViewMovedUp:(BOOL)movedUp;
 - (void)keyboardWasShown:(NSNotification*)notification;
-- (void)bmEdit_keyboardWasShown:(NSNotification*)notification;
+- (void)mdsEdit_keyboardWasShown:(NSNotification*)notification;
 
 @end

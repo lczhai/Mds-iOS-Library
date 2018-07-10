@@ -1,8 +1,8 @@
 //
 //  HYGuideView.m
-//  BM-JYT
+//  MDS-Chia
 //
-//  Created by XHY on 2017/2/23.
+//  Created by jony on 2018/2/23.
 //  Copyright © 2017年 XHY. All rights reserved.
 //
 

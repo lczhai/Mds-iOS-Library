@@ -1,8 +1,8 @@
 //
 //  WXBridgeManager+BMExtend.h
-//  BM-JYT
+//  MDS-Chia
 //
-//  Created by XHY on 2017/3/30.
+//  Created by jony on 2018/3/30.
 //  Copyright © 2017年 XHY. All rights reserved.
 //
 
@@ -10,6 +10,6 @@
 
 @interface WXBridgeManager (BMExtend)
 
-- (void)bm_fireEvent:(NSString *)instanceId ref:(NSString *)ref type:(NSString *)type params:(NSDictionary *)params domChanges:(NSDictionary *)domChanges;
+- (void)mds_fireEvent:(NSString *)instanceId ref:(NSString *)ref type:(NSString *)type params:(NSDictionary *)params domChanges:(NSDictionary *)domChanges;
 
 @end

@@ -1,13 +1,13 @@
 //
 //  WXScrollerComponent+BMExtend.m
-//  BM-JYT
+//  MDS-Chia
 //
-//  Created by XHY on 2017/3/20.
+//  Created by jony on 2018/3/20.
 //  Copyright © 2017年 XHY. All rights reserved.
 //
 
 #import "WXScrollerComponent+BMExtend.h"
-#import <BMDotGifHeader.h>
+#import <MDSDotGifHeader.h>
 
 @implementation WXScrollerComponent (BMExtend)
 
@@ -15,22 +15,22 @@ WX_EXPORT_METHOD(@selector(refresh));
 WX_EXPORT_METHOD(@selector(refreshEnd));
 
 
-- (instancetype)bmScroller_initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance
+- (instancetype)mdsScroller_initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance
 {
     if (attributes[@"bounce"]) {
-        objc_setAssociatedObject(self, "bm_bounce", [NSNumber numberWithBool:[WXConvert BOOL:attributes[@"bounce"]]], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, "mds_bounce", [NSNumber numberWithBool:[WXConvert BOOL:attributes[@"bounce"]]], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     
     if (attributes[@"showRefresh"]) {
-        objc_setAssociatedObject(self, "bm_showRefresh", [NSNumber numberWithBool:[WXConvert BOOL:attributes[@"showRefresh"]]], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, "mds_showRefresh", [NSNumber numberWithBool:[WXConvert BOOL:attributes[@"showRefresh"]]], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     
-    return [self bmScroller_initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance];
+    return [self mdsScroller_initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance];
 }
 
-- (void)bmScroller_scrollViewDidScroll:(UIScrollView *)scrollView
+- (void)mdsScroller_scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSNumber *bounce = objc_getAssociatedObject(self, "bm_bounce");
+    NSNumber *bounce = objc_getAssociatedObject(self, "mds_bounce");
     if (bounce) {
         CGPoint pt = scrollView.contentOffset;
         if (pt.y <=0 ) {
@@ -40,27 +40,27 @@ WX_EXPORT_METHOD(@selector(refreshEnd));
         }
     }
     
-    [self bmScroller_scrollViewDidScroll:scrollView];
+    [self mdsScroller_scrollViewDidScroll:scrollView];
 }
 
 #pragma mark - 下拉刷新
-- (UIView *)bmScroller_loadView
+- (UIView *)mdsScroller_loadView
 {
-    UIView *view = [self bmScroller_loadView];
+    UIView *view = [self mdsScroller_loadView];
     [self checkNeedShowRefresh:view];
     return view;
 }
 
-- (UIView *)bmList_loadView
+- (UIView *)mdsList_loadView
 {
-    UIView *view = [self bmList_loadView];
+    UIView *view = [self mdsList_loadView];
     [self checkNeedShowRefresh:view];
     return view;
 }
 
-- (void)bmScroller_viewDidLoad
+- (void)mdsScroller_viewDidLoad
 {
-    [self bmScroller_viewDidLoad];
+    [self mdsScroller_viewDidLoad];
     
     UIScrollView *scrollView = self.view;
     if (@available(iOS 11.0, *)) {
@@ -74,9 +74,9 @@ WX_EXPORT_METHOD(@selector(refreshEnd));
     
     CGSize size = [[UIScreen mainScreen] currentMode].size;
     
-    NSNumber *showRefresh = objc_getAssociatedObject(self, "bm_showRefresh");
+    NSNumber *showRefresh = objc_getAssociatedObject(self, "mds_showRefresh");
     if (showRefresh && [showRefresh boolValue]) {
-        BMDotGifHeader *header = [BMDotGifHeader headerWithRefreshingBlock:^{
+        MDSDotGifHeader *header = [MDSDotGifHeader headerWithRefreshingBlock:^{
             [self refresh];
         }];
         

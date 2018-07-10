@@ -1,13 +1,13 @@
 //
 //  CTMediator+BMPushActions.m
-//  BMBaseLibrary
+//  MDSBaseLibrary
 //
 //  Created by XHY on 2018/4/24.
 //
 
 #import "CTMediator+BMPushActions.h"
 
-NSString *const kCTMediatorPushTarget = @"BMPush";
+NSString *const kCTMediatorPushTarget = @"MDSPush";
 
 NSString *const kCTMediatorActionRegisterDeviceToken = @"registerForRemoteNotificationsWithDeviceToken";
 NSString *const kCTMediatorActionSetIsLaunchedByNotification = @"setIsLaunchedByNotification";

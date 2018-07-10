@@ -1,8 +1,8 @@
 //
 //  WXTextComponent+BMExtend.h
-//  BM-JYT
+//  MDS-Chia
 //
-//  Created by XHY on 2017/3/20.
+//  Created by jony on 2018/3/20.
 //  Copyright © 2017年 XHY. All rights reserved.
 //
 
@@ -11,6 +11,6 @@
 
 @interface WXTextComponent (BMExtend)
 
-- (instancetype)bmText_initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance;
+- (instancetype)mdsText_initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance;
 
 @end

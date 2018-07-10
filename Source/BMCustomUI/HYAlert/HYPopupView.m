@@ -7,7 +7,7 @@
 //
 
 #import "HYPopupView.h"
-#import "BMDefine.h"
+#import "MDSDefine.h"
 
 @interface HYPopupView () <UITableViewDataSource, UITableViewDelegate>
 

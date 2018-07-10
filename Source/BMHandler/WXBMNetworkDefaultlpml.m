@@ -1,6 +1,6 @@
 //
 //  WXBMNetworkDefaultlpml.m
-//  BM-JYT
+//  MDS-Chia
 //
 //  Created by 窦静轩 on 2017/3/6.
 //  Copyright © 2017年 XHY. All rights reserved.
@@ -44,7 +44,7 @@ const NSString * md5Key = @"md5";
     if (self) {
         _mimeTypes = @[@"js"];
         _interceptor = YES;
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearMd5Map) name:K_BMAppReStartNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearMd5Map) name:K_MDSAppReStartNotification object:nil];
     }
     return self;
 }
@@ -58,7 +58,7 @@ const NSString * md5Key = @"md5";
 {
     NSString* const requestFiletype = [[[request URL] pathExtension] lowercaseString];
     
-    _interceptor = BM_InterceptorOn();
+    _interceptor = MDS_InterceptorOn();
     
     // 如果拦截器
     if (_interceptor && [_mimeTypes containsObject:requestFiletype]) {
@@ -244,7 +244,7 @@ didReceiveResponse:(NSURLResponse *)response
                             
                             WXLogError(@"本地资源md5校验失败: %@",localPath);
                             
-                            NSError * error  = [NSError errorWithDomain:@"BMNetWorkIntercepet" code:-500 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"本地资源md5校验失败",@"reason", nil]];
+                            NSError * error  = [NSError errorWithDomain:@"MDSNetWorkIntercepet" code:-500 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"本地资源md5校验失败",@"reason", nil]];
                             loader.onFailed(error);
                         }
                         
@@ -252,7 +252,7 @@ didReceiveResponse:(NSURLResponse *)response
                 }
                 else{
                     if (loader.onFailed) {
-                        NSError * error  = [NSError errorWithDomain:@"BMNetWorkIntercepet" code:-400 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"本地资源没有匹配到",@"reason", nil]];
+                        NSError * error  = [NSError errorWithDomain:@"MDSNetWorkIntercepet" code:-400 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"本地资源没有匹配到",@"reason", nil]];
                         loader.onFailed(error);
                     }
                 }
@@ -263,7 +263,7 @@ didReceiveResponse:(NSURLResponse *)response
         WXLogError(@"\n\n\n【error】本地资源不存在: %@\n\n\n",localPath);
         
         if (loader.onFailed) {
-            NSError * error  = [NSError errorWithDomain:@"BMNetWorkIntercepet" code:-400 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"本地资源没有匹配到",@"reason", nil]];
+            NSError * error  = [NSError errorWithDomain:@"MDSNetWorkIntercepet" code:-400 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"本地资源没有匹配到",@"reason", nil]];
             loader.onFailed(error);
         }
     }

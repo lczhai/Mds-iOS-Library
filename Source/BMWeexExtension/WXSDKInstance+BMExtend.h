@@ -1,8 +1,8 @@
 //
 //  WXSDKInstance+BMExtend.h
-//  BM-JYT
+//  MDS-Chia
 //
-//  Created by XHY on 2017/3/29.
+//  Created by jony on 2018/3/29.
 //  Copyright © 2017年 XHY. All rights reserved.
 //
 
@@ -11,11 +11,11 @@
 
 @interface WXSDKInstance (BMExtend)
 
--(void)bm_destroyInstance;
+-(void)mds_destroyInstance;
 
 
 - (void)_renderWithMainBundleString:(NSString *)mainBundleString;
-- (void)bm__renderWithMainBundleString:(NSString *)mainBundleString;
+- (void)mds__renderWithMainBundleString:(NSString *)mainBundleString;
 
 
 @end

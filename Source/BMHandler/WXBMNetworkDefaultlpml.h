@@ -1,6 +1,6 @@
 //
 //  WXBMNetworkDefaultlpml.h
-//  BM-JYT
+//  MDS-Chia
 //
 //  Created by 窦静轩 on 2017/3/6.
 //  Copyright © 2017年 XHY. All rights reserved.

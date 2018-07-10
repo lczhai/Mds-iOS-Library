@@ -1,17 +1,17 @@
 //
 //  NSDictionary+Util.h
-//  BM-JYT
+//  MDS-Chia
 //
-//  Created by XHY on 2017/2/21.
+//  Created by jony on 2018/2/21.
 //  Copyright © 2017年 XHY. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-typedef NS_OPTIONS(NSInteger, BMResCode) {
-    BMResCodeSuccess = 0,
-    BMResCodeError = 9,
-    BMResCodeOther = 3
+typedef NS_OPTIONS(NSInteger, MDSResCode) {
+    MDSResCodeSuccess = 0,
+    MDSResCodeError = 9,
+    MDSResCodeOther = 3
 };
 
 @interface NSDictionary (Util)

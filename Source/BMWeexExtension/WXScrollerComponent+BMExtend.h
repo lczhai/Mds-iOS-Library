@@ -1,8 +1,8 @@
 //
 //  WXScrollerComponent+BMExtend.h
-//  BM-JYT
+//  MDS-Chia
 //
-//  Created by XHY on 2017/3/20.
+//  Created by jony on 2018/3/20.
 //  Copyright © 2017年 XHY. All rights reserved.
 //
 
@@ -11,14 +11,14 @@
 
 @interface WXScrollerComponent (BMExtend)
 
-- (instancetype)bmScroller_initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance;
+- (instancetype)mdsScroller_initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance;
 
-- (void)bmScroller_scrollViewDidScroll:(UIScrollView *)scrollView;
+- (void)mdsScroller_scrollViewDidScroll:(UIScrollView *)scrollView;
 
-- (UIView *)bmScroller_loadView;
+- (UIView *)mdsScroller_loadView;
 
-- (UIView *)bmList_loadView;
+- (UIView *)mdsList_loadView;
 
-- (void)bmScroller_viewDidLoad;
+- (void)mdsScroller_viewDidLoad;
 
 @end

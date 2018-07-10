@@ -7,7 +7,7 @@
 //
 
 #import "JYTLabelBoldFontSize21.h"
-#import "BMDefine.h"
+#import "MDSDefine.h"
 
 @implementation JYTLabelBoldFontSize21
 

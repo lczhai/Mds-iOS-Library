@@ -2,7 +2,7 @@
 //  WXWebComponent+BMExtend.h
 //  Pods
 //
-//  Created by XHY on 2017/5/5.
+//  Created by jony on 2018/5/5.
 //
 //
 
@@ -11,11 +11,11 @@
 
 @interface WXWebComponent (BMExtend)
 
-- (void)bm_webViewDidFinishLoad:(UIWebView *)webView;
+- (void)mds_webViewDidFinishLoad:(UIWebView *)webView;
 
-- (void)bm_viewDidLoad;
+- (void)mds_viewDidLoad;
 
 - (void)setUrl:(NSString *)url;
-- (void)bm_setUrl:(NSString *)url;
+- (void)mds_setUrl:(NSString *)url;
 
 @end

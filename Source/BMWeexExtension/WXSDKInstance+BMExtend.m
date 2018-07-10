@@ -1,39 +1,39 @@
 //
 //  WXSDKInstance+BMExtend.m
-//  BM-JYT
+//  MDS-Chia
 //
-//  Created by XHY on 2017/3/29.
+//  Created by jony on 2018/3/29.
 //  Copyright © 2017年 XHY. All rights reserved.
 //
 
 #import "WXSDKInstance+BMExtend.h"
 #import <objc/runtime.h>
-#import "BMNotifactionCenter.h"
-#import "BMResourceManager.h"
+#import "MDSNotifactionCenter.h"
+#import "MDSResourceManager.h"
 
 @implementation WXSDKInstance(BMExtend)
 
 
-- (void)bm_destroyInstance
+- (void)mds_destroyInstance
 {
     //通知消息中心 移除对应实例
-    [[BMNotifactionCenter defaultCenter] destroyObserver:self.instanceId];
+    [[MDSNotifactionCenter defaultCenter] destroyObserver:self.instanceId];
     
-    [self bm_destroyInstance];
+    [self mds_destroyInstance];
     
 }
 
 
-- (void)bm__renderWithMainBundleString:(NSString *)mainBundleString
+- (void)mds__renderWithMainBundleString:(NSString *)mainBundleString
 {
     /** 注入本地的base js */
-    NSString *baseScript = [BMResourceManager sharedInstance].bmWidgetJs;
+    NSString *baseScript = [MDSResourceManager sharedInstance].mdsWidgetJs;
     
     if (baseScript.length) {
         mainBundleString = [baseScript stringByAppendingString:mainBundleString];
     }
     
-    [self bm__renderWithMainBundleString:mainBundleString];
+    [self mds__renderWithMainBundleString:mainBundleString];
 }
 
 @end

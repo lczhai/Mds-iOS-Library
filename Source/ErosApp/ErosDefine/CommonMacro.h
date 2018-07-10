@@ -142,7 +142,7 @@ _Pragma("clang diagnostic pop")
 #define K_AppBuild_VERSION    [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
 
 
-CG_INLINE void BM_SetUserDefaultData(NSString *key,id value) {
+CG_INLINE void MDS_SetUserDefaultData(NSString *key,id value) {
     
     if (!key || !value) {
         return;
@@ -150,7 +150,7 @@ CG_INLINE void BM_SetUserDefaultData(NSString *key,id value) {
     [[NSUserDefaults standardUserDefaults] setObject:value forKey:key];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
-CG_INLINE id BM_GetUserDefaultData(NSString *key) {
+CG_INLINE id MDS_GetUserDefaultData(NSString *key) {
     if (!key) {
         return nil;
     }

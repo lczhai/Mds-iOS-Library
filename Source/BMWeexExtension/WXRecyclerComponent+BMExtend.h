@@ -1,8 +1,8 @@
 //
 //  WXRecyclerComponent+BMExtend.h
-//  BMBaseLibrary
+//  MDSBaseLibrary
 //
-//  Created by XHY on 2017/9/22.
+//  Created by jony on 2018/9/22.
 //
 
 #import <WeexSDK/WeexSDK.h>
@@ -10,6 +10,6 @@
 
 @interface WXRecyclerComponent (BMExtend)
 
-- (UIView *)bmRecycler_loadView;
+- (UIView *)mdsRecycler_loadView;
 
 @end

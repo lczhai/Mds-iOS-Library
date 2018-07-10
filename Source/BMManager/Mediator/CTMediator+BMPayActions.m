@@ -1,13 +1,13 @@
 //
 //  CTMediator+BMPayActions.m
-//  BMBaseLibrary
+//  MDSBaseLibrary
 //
 //  Created by XHY on 2018/4/25.
 //
 
 #import "CTMediator+BMPayActions.h"
 
-NSString *const kCTMediatorWXPayTarget = @"BMWXPay";
+NSString *const kCTMediatorWXPayTarget = @"MDSWXPay";
 NSString *const kCTMediatorActionPayHandleOpenURL = @"PayHandleOpenURL";
 
 @implementation CTMediator (BMPayActions)

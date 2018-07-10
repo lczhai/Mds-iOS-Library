@@ -63,10 +63,10 @@
         }
         return nil;
     }
-    else if ([imgUrl.scheme isEqualToString:BM_LOCAL])
+    else if ([imgUrl.scheme isEqualToString:MDS_LOCAL])
     {
         // 拦截器
-        if (BM_InterceptorOn()) {
+        if (MDS_InterceptorOn()) {
             // 从jsbundle读取图片
             UIImage *img = nil;
             NSString *imgPath = [NSString stringWithFormat:@"%@/%@%@",K_JS_PAGES_PATH,imgUrl.host,imgUrl.path];

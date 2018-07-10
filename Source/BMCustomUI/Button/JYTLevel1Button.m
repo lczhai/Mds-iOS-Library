@@ -7,7 +7,7 @@
 //
 
 #import "JYTLevel1Button.h"
-#import "BMDefine.h"
+#import "MDSDefine.h"
 
 @implementation JYTLevel1Button
 

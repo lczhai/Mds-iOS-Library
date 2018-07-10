@@ -10,10 +10,10 @@
 
 #ifdef DEBUG
 #import "DebugSettingVC.h"
-#import "BMResourceManager.h"
+#import "MDSResourceManager.h"
 #import "UINavigationBar+NavigationBarExtend.h"
-#import <BMBaseViewController.h>
-#import "BMDebugManager.h"
+#import <MDSBaseViewController.h>
+#import "MDSDebugManager.h"
 
 @interface DebugSettingVC ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -33,7 +33,7 @@
     // Do any additional setup after loading the view.
     self.title = @"Debug";
     
-    NSDictionary * userInfo = [[BMResourceManager sharedInstance] loadConfigData:K_JS_VERSION_PATH];
+    NSDictionary * userInfo = [[MDSResourceManager sharedInstance] loadConfigData:K_JS_VERSION_PATH];
     if ([userInfo isKindOfClass:[NSDictionary class]]) {
         _jsVersion = userInfo[@"jsVersion"] ? userInfo[@"jsVersion"]:@"";
     }
@@ -86,7 +86,7 @@
             UISwitch * switchOpen = [[UISwitch alloc] init];
             switchOpen.tag = 1000 + indexPath.row;
             
-            switchOpen.on = BM_InterceptorOn();
+            switchOpen.on = MDS_InterceptorOn();
             
             [switchOpen addTarget:self action:@selector(switchChange:) forControlEvents:UIControlEventValueChanged];
             
@@ -107,8 +107,8 @@
             UISwitch * switchOpen = [[UISwitch alloc] init];
             self.hotRefreshSwitch = switchOpen;
             switchOpen.tag = 1000 + indexPath.row;
-            switchOpen.on = [[NSUserDefaults standardUserDefaults] boolForKey:BM_HotRefreshKey];
-            switchOpen.enabled = !BM_InterceptorOn();
+            switchOpen.on = [[NSUserDefaults standardUserDefaults] boolForKey:MDS_HotRefreshKey];
+            switchOpen.enabled = !MDS_InterceptorOn();
             [switchOpen addTarget:self action:@selector(hotRefreshSwitchChange:) forControlEvents:UIControlEventValueChanged];
             cell.accessoryView = switchOpen;
             cell.textLabel.textAlignment = NSTextAlignmentLeft;
@@ -160,14 +160,14 @@
     WXLogInfo(@"拦截开关 is %d",on);
     
     NSNumber * number = [[NSNumber alloc] initWithBool:on];
-    [[NSUserDefaults standardUserDefaults] setObject:number forKey:BM_Weex_Interceptor];
+    [[NSUserDefaults standardUserDefaults] setObject:number forKey:MDS_Weex_Interceptor];
     
-    [[BMMediatorManager shareInstance] loadJSMediator:YES];
+    [[MDSMediatorManager shareInstance] loadJSMediator:YES];
   
     //拦截器打开,将热刷新Socket关闭
     if (on) {
         self.hotRefreshSwitch.on = NO;
-        [[BMDebugManager shareInstance] hotRefreshWebSocketClose];
+        [[MDSDebugManager shareInstance] hotRefreshWebSocketClose];
     }
     
     self.hotRefreshSwitch.enabled = !on;
@@ -178,9 +178,9 @@
 -(void)hotRefreshSwitchChange:(UISwitch *)aSwitch
 {
     if (aSwitch.on) {
-        [[BMDebugManager shareInstance] hotRefreshWebSocketConnect];
+        [[MDSDebugManager shareInstance] hotRefreshWebSocketConnect];
     } else {
-        [[BMDebugManager shareInstance] hotRefreshWebSocketClose];
+        [[MDSDebugManager shareInstance] hotRefreshWebSocketClose];
     }
 }
 

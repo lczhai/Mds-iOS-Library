@@ -1,8 +1,8 @@
 //
 //  HYAlertModel.h
-//  BM-JYT
+//  MDS-Chia
 //
-//  Created by XHY on 2017/3/3.
+//  Created by jony on 2018/3/3.
 //  Copyright © 2017年 XHY. All rights reserved.
 //
 

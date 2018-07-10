@@ -1,8 +1,8 @@
 //
 //  NSDictionary+Util.m
-//  BM-JYT
+//  MDS-Chia
 //
-//  Created by XHY on 2017/2/21.
+//  Created by jony on 2018/2/21.
 //  Copyright © 2017年 XHY. All rights reserved.
 //
 

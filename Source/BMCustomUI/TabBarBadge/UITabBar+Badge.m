@@ -1,6 +1,6 @@
 //
 //  UITabBar+Badge.m
-//  BMBaseLibrary
+//  MDSBaseLibrary
 //
 //  Created by XHY on 2018/5/29.
 //

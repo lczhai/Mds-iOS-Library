@@ -7,7 +7,7 @@
 //
 
 #import "JYTBigTitleLabel.h"
-#import "BMDefine.h"
+#import "MDSDefine.h"
 
 @implementation JYTBigTitleLabel
 

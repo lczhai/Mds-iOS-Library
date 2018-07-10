@@ -1,8 +1,8 @@
 //
 //  QRShaowView.m
-//  BMBaseLibrary
+//  MDSBaseLibrary
 //
-//  Created by XHY on 2017/10/11.
+//  Created by jony on 2018/10/11.
 //
 
 #import "QRShaowView.h"

@@ -1,6 +1,6 @@
 //
 //  CTMediator+BMPushActions.h
-//  BMBaseLibrary
+//  MDSBaseLibrary
 //
 //  Created by XHY on 2018/4/24.
 //

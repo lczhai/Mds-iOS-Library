@@ -1,6 +1,6 @@
 //
 //  WXImageComponent+BMExtend.m
-//  BM-JYT
+//  MDS-Chia
 //
 //  Created by 窦静轩 on 2017/3/21.
 //  Copyright © 2017年 XHY. All rights reserved.
@@ -79,7 +79,7 @@ static NSString * defaultKey = @"default";
 }
 
 
-- (void)bm_updatePlaceHolderWithFailedBlock:(void(^)(NSString *, NSError *))downloadFailedBlock
+- (void)mds_updatePlaceHolderWithFailedBlock:(void(^)(NSString *, NSError *))downloadFailedBlock
 {
     
     objc_property_t placeholderOperationProperty = class_getProperty([WXImageComponent class], placeholderOperationKey);
@@ -200,7 +200,7 @@ static NSString * defaultKey = @"default";
 }
 
 
-- (void)bm_updateContentImageWithFailedBlock:(void(^)(NSString *, NSError *))downloadFailedBlock
+- (void)mds_updateContentImageWithFailedBlock:(void(^)(NSString *, NSError *))downloadFailedBlock
 {
 //    objc_property_t imageSrcProperty = class_getProperty([WXImageComponent class], imageSrcKey);
 //

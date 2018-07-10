@@ -2,13 +2,13 @@
 //  WXEditComponent+BMExtend.m
 //  Pods
 //
-//  Created by XHY on 2017/4/24.
+//  Created by jony on 2018/4/24.
 //
 //
 
 #import "WXEditComponent+BMExtend.h"
 #import "WXEditComponent_Private.h"
-#import "BMInputView.h"
+#import "MDSInputView.h"
 #import "WXTextInputComponent.h"
 #import "WXTextAreaComponent.h"
 
@@ -33,7 +33,7 @@ const char *  _attrKey = "_attr";
     return nil;
 }
 
-- (instancetype)bmEdit_initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance
+- (instancetype)mdsEdit_initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance
 {
     // 解析 tintColor
     if (styles[@"tintColor"]) {
@@ -41,10 +41,10 @@ const char *  _attrKey = "_attr";
         if (tintColor) objc_setAssociatedObject(self, _tintColor, tintColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     
-    return [self bmEdit_initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance];
+    return [self mdsEdit_initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance];
 }
 
-- (void)bmEdit_viewDidLoad
+- (void)mdsEdit_viewDidLoad
 {
     // 获取 tintColor
     id tintColor = objc_getAssociatedObject(self, _tintColor);
@@ -53,18 +53,18 @@ const char *  _attrKey = "_attr";
         view.tintColor = tintColor;
     }
     
-    [self bmEdit_viewDidLoad];
+    [self mdsEdit_viewDidLoad];
 }
 
-- (void)bmEdit_setAutofocus:(BOOL)b
+- (void)mdsEdit_setAutofocus:(BOOL)b
 {
     /* autofocus 弹出键盘有个动画问题 延时 0.5 秒执行弹出键盘方法 */
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self bmEdit_setAutofocus:b];
+        [self mdsEdit_setAutofocus:b];
     });
 }
 
-- (BOOL)bmEdit_textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+- (BOOL)mdsEdit_textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
     if ([text isEqualToString:@"\n"]) {
         NSString *typeStr = [WXUtility returnKeyType:[[self valueForKey:_returnKeyTypeKey] integerValue]];
@@ -114,7 +114,7 @@ const char *  _attrKey = "_attr";
     
     /* 60002 ⬆️*/
 }
-+(void)bmSetType
++(void)mdsSetType
 {
 //    [self setKeyboardType:UIKeyboardTypeDefault];
 //    [self setSecureTextEntry:NO];
@@ -186,9 +186,9 @@ const char *  _attrKey = "_attr";
                 
                 UITextField * _inputView = [self valueForKey:inputViewPName];
                 
-                BMInputView * bmKeyboard = [[BMInputView alloc] initWithInputType:BMInputIDCardType];
-                bmKeyboard.textFiled = _inputView;
-                _inputView.inputView = bmKeyboard;
+                MDSInputView * mdsKeyboard = [[MDSInputView alloc] initWithInputType:MDSInputIDCardType];
+                mdsKeyboard.textFiled = _inputView;
+                _inputView.inputView = mdsKeyboard;
                 
             }
         }
@@ -201,7 +201,7 @@ const char *  _attrKey = "_attr";
         }
 }
 
-- (void)bmEdit_keyboardWasShown:(NSNotification*)notification
+- (void)mdsEdit_keyboardWasShown:(NSNotification*)notification
 {
     if(![self.view isFirstResponder]) {
         return;

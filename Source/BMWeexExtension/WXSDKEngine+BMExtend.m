@@ -11,9 +11,9 @@
 
 @implementation WXSDKEngine(BMExtend)
 
-+(void)bm_registerDefaultHandlers
++(void)mds_registerDefaultHandlers
 {
-    [self bm_registerDefaultHandlers];
+    [self mds_registerDefaultHandlers];
     
     if (nil == [WXSDKEngine handlerForProtocol:@protocol(WXResourceRequestHandler)]) {
         [WXSDKEngine registerHandler:[WXResourceRequestHandlerDefaultImpl new] withProtocol:@protocol(WXResourceRequestHandler)];
@@ -22,11 +22,11 @@
 
 }
 
-+(void)bm_registerDefaultModules
++(void)mds_registerDefaultModules
 {
-    [self bm_registerDefaultModules];
+    [self mds_registerDefaultModules];
     
-    [self registerModule:@"picker" withClass:NSClassFromString(@"BMPickerModule")];
+    [self registerModule:@"picker" withClass:NSClassFromString(@"MDSPickerModule")];
 
 }
 @end

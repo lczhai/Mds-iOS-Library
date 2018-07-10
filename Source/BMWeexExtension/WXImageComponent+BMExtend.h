@@ -1,6 +1,6 @@
 //
 //  WXImageComponent+BMExtend.h
-//  BM-JYT
+//  MDS-Chia
 //
 //  Created by 窦静轩 on 2017/3/21.
 //  Copyright © 2017年 XHY. All rights reserved.
@@ -12,9 +12,9 @@
 @interface WXImageComponent (BMExtend)
 
 - (void)updatePlaceHolderWithFailedBlock:(void(^)(NSString *, NSError *))downloadFailedBlock;
-- (void)bm_updatePlaceHolderWithFailedBlock:(void(^)(NSString *, NSError *))downloadFailedBlock;
+- (void)mds_updatePlaceHolderWithFailedBlock:(void(^)(NSString *, NSError *))downloadFailedBlock;
 
 - (void)updateContentImageWithFailedBlock:(void(^)(NSString *, NSError *))downloadFailedBlock;
-- (void)bm_updateContentImageWithFailedBlock:(void(^)(NSString *, NSError *))downloadFailedBlock;
+- (void)mds_updateContentImageWithFailedBlock:(void(^)(NSString *, NSError *))downloadFailedBlock;
 
 @end

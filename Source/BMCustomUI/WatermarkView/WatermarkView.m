@@ -2,7 +2,7 @@
 //  WatermarkView.m
 //  Pods
 //
-//  Created by XHY on 2017/8/9.
+//  Created by jony on 2018/8/9.
 //
 //
 
